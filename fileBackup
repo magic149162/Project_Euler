@@ -1,0 +1,56 @@
+import os,zipfile,time,glob
+"""You can use this script to completely backup all files under certain directory to any target location you specified.
+	
+		Be aware the script will automatically create a subdirectory named with current system year, month and day under your target directory, \
+		thus your backuped zip package will be stored in that folder."""
+
+srcDirExist = False
+
+while srcDirExist == False:
+
+	srcDir = raw_input('Please specify the source directory you want to backup:\n')
+	
+	if not os.path.exists(srcDir):
+		print "Oops! The source folder doesn't exist."
+	else:
+		srcDirExist = True
+
+tarDir = raw_input('OK! Then specify the target directory to store the backuped zip package:\n')
+if not os.path.exists(tarDir):
+	print("Target folder to store backuped package doesn't exitst. We will create it for you.")
+	os.makedirs(tarDir)
+
+srcList = srcDir.split('\\')#generate a list to acquire part of target file name 
+
+cur_day = time.strftime("%Y%m%d")#generate a string to store target subdirectory name
+tarFilePath_temp1 = os.path.join(tarDir,cur_day)#acquire target full path
+
+zipExistList = glob.glob(tarFilePath_temp1+os.sep+srcList[-1]+r"*.*")#use wildcards to generate a list to store path of all zip files with filename starting with the name of source folder 
+
+if not os.path.exists(tarFilePath_temp1):	
+	print("It seems that the source folder hasn't been backuped today, so we will create a folder marked by current day for you. ")
+	os.mkdir(tarFilePath_temp1)
+elif zipExistList and os.path.isfile(zipExistList[0]):#decide whether target folder already contains any backuped package
+	print("It seems that the source folder has already been backuped today")
+comment = raw_input("Please add some comment to your new zip package:")
+tarFilePath = os.path.join(tarFilePath_temp1,srcList[-1])+'_'+comment+".zip"
+	
+zipFile = zipfile.ZipFile(tarFilePath,'w',zipfile.ZIP_DEFLATED)
+fileCnt = 0
+for dirPath,dirName,fileNames in os.walk(srcDir):#scan all files and folders under source directory tree.
+		for fileName in fileNames:
+			fullName=os.path.join(dirPath,fileName)
+			fileNameTemp=fullName.split(':')
+			fileName=fileNameTemp[1]#generate filename without partition label
+			zipFile.write(fullName,fileName,zipfile.ZIP_DEFLATED)
+			print 'compressing',fullName
+			fileCnt+=1
+
+if(fileCnt==1):
+	print "filezip complete! Only {} file have been archived.".format(fileCnt)
+elif(fileCnt==0):
+	print "Oops! The source directory you specified doesn't contain any file!"
+else:
+	print "Backup(FileZip) complete! {} files have been archived.".format(fileCnt)
+zipFile.close()
+
