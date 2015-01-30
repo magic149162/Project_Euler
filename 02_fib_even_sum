@@ -1,7 +1,7 @@
 '''Two differnent ways to calculate the sum of even memebers in Fibonacci series with the last member not exceeds 4 million.
 
-    The first approach deduce the members from the definition of the series as a[n] = a[n-1] +a[n-2]
-    While the second one deduce the members from an interesting truth that the ratio between two adjacent even members approaches Phi**3, \n
+    The first approach deduces the members from the definition of the series as a[n] = a[n-1] +a[n-2]
+    While the second one acquires the members from an interesting truth that the ratio between two adjacent even members approaches Phi**3, \n
     where Phi = Golden ratio(approximately 1.61803398)'''
 def fib():
     sum = 2
