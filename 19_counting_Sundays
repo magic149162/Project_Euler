@@ -26,7 +26,7 @@ while 1900 < year < 2001:
 	days = sum(days_month_last)
 	first_in_year = (days + first_in_year) % 7
 	days_inc = 0
-	for month in range(1,13,1):
+	for month in xrange(1,13,1):
 		if month>1:
 			days_inc = days_inc + days_month_this[month-2] 
 		first_in_month = (days_inc + first_in_year) % 7
