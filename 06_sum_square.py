@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=6
 #the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum
 dif=0
 for n in range(1,101):

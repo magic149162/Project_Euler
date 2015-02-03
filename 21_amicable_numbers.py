@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=21
 #Evaluate the sum of all the amicable numbers under 10000
 #solution 1: less time but more lines
 '''def d(x):

@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=9
 #calculate the product of the Pythagorean triplet when a+b+c = 1000 .
 #Given the Triangle Inequality that the sum of the lengths of any two sides must be greater than or equal to the length of the remaining side, the length of any side should never exceed 500.
 #Moreover, as the average value for a , b and c is 333.33, it sets an upper limit to the shortest side and a lower limit to the longest side.

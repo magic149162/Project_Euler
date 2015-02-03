@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=8
 #Find the largest product of 13 adjacent digits in a given number.
 
 #First, acquire each digit of the number and store them in a list, and then pack each 13 adjacent numbers into an indivisual list ,thus we get 988 

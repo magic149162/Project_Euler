@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=10
 from math import sqrt
 def is_prime(x):
 	is_prime = True

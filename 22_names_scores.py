@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=22
 with open(r'.\p022_names.txt') as f:
 	name = f.readline().replace('"','').split(',')
 name =sorted(name)

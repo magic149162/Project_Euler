@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=14
 #find the starting number, under one million, produces the longest Collatz chain
 #for i in xrange(2,1000000,1):
 def collatz_seq(x):

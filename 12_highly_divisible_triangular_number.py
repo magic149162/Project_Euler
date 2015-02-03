@@ -1,3 +1,4 @@
+#https://projecteuler.net/problem=12
 #retrieve the value of the first triangle number to have over five hundred divisors
 i = 0
 for x in range(1000):
