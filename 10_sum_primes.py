@@ -1,18 +1,16 @@
 #https://projecteuler.net/problem=10
-from math import sqrt
 def is_prime(x):
 	is_prime = True
-	for i in range(2,int(round(sqrt(x)+1)),1):
+	if x <=1:
+		#print x, "is not a prime."
+		return False	
+	for i in range(2,int(x**0.5+1),1):
 		if (x % i ==0):
 			is_prime = False
-			break
-	if x ==1:
-		#print x, "is not a prime."
-		return False		
+			break		
 	if is_prime:
 		#print x,"is a prime."
 		return True
-	else:
 		#print x, "is not a prime."
 		return False
 def prime_in(x):
