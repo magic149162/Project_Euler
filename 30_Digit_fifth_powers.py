@@ -1,7 +1,7 @@
 #https://projecteuler.net/problem=30
 
 #solution 1
-#caculate for a given number x, sumation of each digit to the 4th power
+#caculate for a given number x, sumation of each digit to the 5th power
 def p5_sum(x):
 	p5_sum = 0
 	for i in str(x):
